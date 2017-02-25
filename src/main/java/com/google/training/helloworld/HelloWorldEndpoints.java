@@ -39,4 +39,11 @@ public class HelloWorldEndpoints {
         return new HelloClass(name, period);
     }
 
+    @ApiMethod(name = "sayBye", path = "sayBye",
+            httpMethod = HttpMethod.GET)
+
+    public ByeClass sayBye(@Named("name") String name) {
+        return new ByeClass(name);
+    }
+
 }

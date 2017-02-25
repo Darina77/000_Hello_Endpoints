@@ -48,7 +48,7 @@ function enableButtons () {
 	
 	// Set the onclick action for the second button
 	btn = document.getElementById("input_greet_by_name");
-	btn.onclick=function(){greetByName();};
+	btn.onclick=function(){greetByName(); sayBye();};
     // Update the button label now that the button is active
 	btn.value="Click me for a personal greeting";
 
@@ -102,3 +102,8 @@ function greetByPeriod(){
 }
 
 
+function sayBye(){
+    var name = document.getElementById("name_field").value;
+    var request = gapi.client.helloworldendpoints.sayBye({'name': name});
+    request.execute(sayHelloCallback);
+}
